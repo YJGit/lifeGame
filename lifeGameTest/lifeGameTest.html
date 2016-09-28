@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta http-equiv="Content-Type" content="text\html; charset=utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<title>Life Game Test</title>
+	<link rel="stylesheet" type="text/css" href="css/lifeGame.css">
+	<script type="text/javascript" src="js/lifeGame.js"></script>
+    <link rel="stylesheet" type="text/css" href="./node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div id="gameTitle"><h2>生命游戏</h2></div>
+    <div id="gameArea">
+    	<canvas id="myCanvas" width="600px" height="480px"></canvas>
+    	<div id="gameInfo">
+    		<div class="message">
+    			<div class="restartButton">
+                    <input type="button" value="重新开始" id="restartGame">
+                </div>
+                <div class="initSize">
+                    大小: <input type="text" value="50" id="gridSize">(1~100正整数)
+                </div>
+    		</div>
+        </div>
+    </div>
+
+    <div id="mocha"></div>
+    <script type="text/javascript" src="./node_modules/mocha/mocha.js"></script>
+    <script type="text/javascript">mocha.setup('bdd');</script>
+    <script type="text/javascript" src="./node_modules/chai/chai.js"></script>
+    <script type="text/javascript">
+        var assert = chai.assert;
+    </script>
+    <script type="text/javascript" src="js/lifeGame.js"></script>
+    <script type="text/javascript" src="js/life_game_test.js"></script>
+    <script type="text/javascript">
+        mocha.run();
+    </script>
+
+</body>
+<script type="text/javascript">
+    document.getElementById("restartGame").onclick = function(){
+	lifeGame.restart_game();
+}
+</script>
+</html>
